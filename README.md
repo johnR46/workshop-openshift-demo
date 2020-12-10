@@ -50,17 +50,19 @@ lab จะแบ่งออกเป็น
 1. Setup & Sample Deploy app เพื่อทดสอบว่า Openshift ใช้ได้ 
 2. เอา หน้าบ้านขึ้นไป Deploy (web app) 
 3. สร้าง db ไว้ ทำตารางไว้ แล้วเปิด port รอ   ตามนี้ แล้ว config https://www.youtube.com/watch?v=XJBzRlOImLk
- <!-- - MYSQL_ROOT_PASSWORD=admin123
-      - MYSQL_DATABASE=test
-      - MYSQL_USER=john-workshop
-      - MYSQL_PASSWORD=john-workshop -->
+ <!-- - MYSQL_ROOT_PASSWORD=johnworkshop
+      - MYSQL_DATABASE=johnworkshop
+      - MYSQL_USER=johnworkshop
+      - MYSQL_PASSWORD=johnworkshop -->
     <!-- table Employee
     private int id;
     private String name;
     private String email;
     private int phone;
     private String department; -->
-ใช้คำสั่ง oc describe svc/mysql ดู Detail
+ใช้คำสั่ง oc describe svc/mysql ดู Detail 
+  - ดู ip เช่น 172.25.91.168
+  
 
 4. เอาหลังบ้าน ( Spring ขึ้นไป Deploy )
 
