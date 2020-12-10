@@ -1,4 +1,4 @@
-FROM node:latest as builder
+FROM node:12.7-alpine AS builder
 
 RUN mkdir -p /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install -g npm@7.1.1
+RUN npm install
 RUN npm run build --prod
 
 CMD ["npm", "start"]
