@@ -54,19 +54,14 @@ lab จะแบ่งออกเป็น
       - MYSQL_DATABASE=johnworkshop
       - MYSQL_USER=johnworkshop
       - MYSQL_PASSWORD=johnworkshop -->
-    <!-- table Employee
-    private int id;
-    private String name;
-    private String email;
-    private int phone;
-    private String department; -->
 ใช้คำสั่ง oc describe svc/mysql ดู Detail 
   - ดู ip เช่น 172.25.91.168
-  
 
-4. เอาหลังบ้าน ( Spring ขึ้นไป Deploy )
 
-5. ทำให้ spring กับ db เจอกัน
+4. เอาหลังบ้าน ( Spring no docker file ขึ้นไป Deploy)
+แล้วตอนมัน route path ออกมา เอาไปใช้  เช่น
+http://springboot-crud-api-v3-workshop-john.apps-crc.testing/api/employees;
+
 6. ทำให้หน้าบ้านกับหลังบ้านเจอกัน
 
 
