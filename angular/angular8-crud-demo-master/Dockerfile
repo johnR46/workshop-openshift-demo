@@ -9,8 +9,6 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-CMD ["npm", "start"]
-
 #FROM nginx:alpine
 #COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
 #COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
@@ -20,3 +18,6 @@ RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
 COPY default.conf /etc/nginx/conf/default.conf
 COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
+
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
