@@ -16,7 +16,7 @@ CMD ["npm", "start"]
 #COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
-RUN chgrp -R 0 /var/log/nginx && \
-    chmod -R g=u /var/log/nginx
+RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
+    chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
 COPY default.conf /etc/nginx/conf/default.conf
 COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
