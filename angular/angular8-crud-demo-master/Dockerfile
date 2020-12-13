@@ -1,23 +1,15 @@
-FROM node:12.7-alpine AS builder
-
-RUN mkdir -p /app
-
-WORKDIR /app
-
-COPY . .
-
+FROM node:10 AS builder
+WORKDIR /usr/src/app
+COPY package.json ./
 RUN npm install
-RUN npm run build --prod
+COPY . .
+RUN npm run build
 
-#FROM nginx:alpine
-#COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
-#COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
 ### STAGE 2: Run ###
-FROM nginx:1.17.1-alpine
+FROM nginx:1.13.12-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
-COPY default.conf /etc/nginx/conf/default.conf
-COPY --from=builder app/dist/angular8-crud-demo usr/share/nginx/html
-
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
