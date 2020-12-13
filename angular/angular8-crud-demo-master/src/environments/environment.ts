@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  //baseUrl: 'http://localhost:8080'
-  baseUrl: ' http://crud-api-v2-workshop-john5.apps-crc.testing'
+  baseUrl: ' http://crud-api-workshop-john.apps-crc.testing'
 
 };
 
