@@ -60,7 +60,7 @@ lab จะแบ่งออกเป็น
 
 4. เอาหลังบ้าน ( Spring no docker file ขึ้นไป Deploy)
 แล้วตอนมัน route path ออกมา เอาไปใช้  เช่น
-http://springboot-crud-api-v3-workshop-john.apps-crc.testing/api/employees;
+http://crud-api-workshop-john.apps-crc.testing
 
 6. ทำให้หน้าบ้านกับหลังบ้านเจอกัน
 
@@ -73,5 +73,5 @@ https://www.youtube.com/watch?v=54_UtSDz4SE Deploy app
 
 # JMeter
 1. ทำ Load Test Sample ยิงหน้าบ้านที่เตรียมมา 
-
+ทำแล้ว
 
