@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: ' http://crud-api-workshop-john.apps-crc.testing'
+  baseUrl: 'http://crud-api-workshop-john.apps-crc.testing'
 
 };
 
